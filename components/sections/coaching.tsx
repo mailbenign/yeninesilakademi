@@ -13,7 +13,7 @@ export function Coaching() {
           <div className="lg:col-span-5 lg:sticky lg:top-28">
             <SectionHeading
               align="left"
-              eyebrow="Akademik Koçluk"
+              eyebrow="Koçluk"
               title={<>Hedeften başarıya <span className="text-gradient">6 adımlık yolculuk</span></>}
               description="Akademik koçluk sistemimiz, öğrencinin hedefini belirleyip lise veya üniversiteye yerleşmesine kadar tüm süreci yapılandırır."
             />

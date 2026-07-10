@@ -18,7 +18,7 @@ export const NAV_LINKS = [
   { label: 'Ana Sayfa', href: '#anasayfa' },
   { label: 'Kurumsal', href: '#kurumsal' },
   { label: 'Programlarımız', href: '#programlar' },
-  { label: 'Akademik Koçluk', href: '#akademik-kocluk' },
+  { label: 'Koçluk', href: '#akademik-kocluk' },
   { label: 'Galeri', href: '#galeri' },
   { label: 'Blog', href: '#blog' },
   { label: 'SSS', href: '#sss' },
@@ -407,7 +407,7 @@ export const FAQS: FAQ[] = [
   {
     question: 'Kayıt için hangi belgeler gereklidir?',
     answer:
-      'Kayıt için öğrenci kimlik belgesi, veli kimlik belgesi ve son dönem karne yeterlidir. Kayıt sürecini online ön kayıt formundan başlatabilirsiniz.',
+      'Kayıt için öğrenci kimlik belgesi, veli kimlik belgesi yeterlidir.',
   },
   {
     question: 'Deneme sınavları ne sıklıkla yapılıyor?',
