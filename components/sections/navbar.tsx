@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Phone, MessageCircle, Moon, Sun } from 'lucide-react';
+import { Menu, X, Phone, Moon, Sun, Facebook, Instagram } from 'lucide-react';
 import { useTheme } from 'next-themes';
 import { NAV_LINKS, CONTACT } from '@/lib/data';
 import { cn } from '@/lib/utils';
@@ -81,20 +81,36 @@ export function Navbar() {
               </button>
             )}
             <a
-              href={CONTACT.phone2Href}
+              href={CONTACT.phoneHref}
               aria-label="Telefon ile ara"
               className="hidden sm:flex h-10 w-10 items-center justify-center rounded-full text-navy-700 dark:text-white hover:bg-slate-100 dark:hover:bg-white/10 transition-colors"
             >
               <Phone className="h-5 w-5" />
             </a>
             <a
-              href={CONTACT.whatsapp}
+              href={CONTACT.phone2Href}
+              aria-label="İkinci telefon ile ara"
+              className="hidden sm:flex h-10 w-10 items-center justify-center rounded-full text-navy-700 dark:text-white hover:bg-slate-100 dark:hover:bg-white/10 transition-colors"
+            >
+              <Phone className="h-5 w-5" />
+            </a>
+            <a
+              href={CONTACT.facebook}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="WhatsApp ile yaz"
-              className="hidden sm:flex h-10 w-10 items-center justify-center rounded-full text-[#25D366] hover:bg-[#25D366]/10 transition-colors"
+              aria-label="Facebook"
+              className="hidden sm:flex h-10 w-10 items-center justify-center rounded-full text-[#1877F2] hover:bg-[#1877F2]/10 transition-colors"
             >
-              <MessageCircle className="h-5 w-5" />
+              <Facebook className="h-5 w-5" />
+            </a>
+            <a
+              href={CONTACT.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              className="hidden sm:flex h-10 w-10 items-center justify-center rounded-full text-pink-500 hover:bg-pink-500/10 transition-colors"
+            >
+              <Instagram className="h-5 w-5" />
             </a>
             <Button
               asChild
@@ -167,11 +183,19 @@ export function Navbar() {
                   <a href="#iletisim" onClick={() => setOpen(false)}>Bize Ulaşın</a>
                 </Button>
                 <div className="flex gap-3">
+                  <a href={CONTACT.phoneHref} className="flex-1 flex items-center justify-center gap-2 h-11 rounded-full border border-slate-200 dark:border-white/10 text-navy-700 dark:text-white text-sm font-medium">
+                    <Phone className="h-4 w-4" /> Ara
+                  </a>
                   <a href={CONTACT.phone2Href} className="flex-1 flex items-center justify-center gap-2 h-11 rounded-full border border-slate-200 dark:border-white/10 text-navy-700 dark:text-white text-sm font-medium">
                     <Phone className="h-4 w-4" /> Ara
                   </a>
-                  <a href={CONTACT.whatsapp} target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center justify-center gap-2 h-11 rounded-full bg-[#25D366] text-white text-sm font-medium">
-                    <MessageCircle className="h-4 w-4" /> WhatsApp
+                </div>
+                <div className="flex gap-3">
+                  <a href={CONTACT.facebook} target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center justify-center gap-2 h-11 rounded-full bg-[#1877F2] text-white text-sm font-medium">
+                    <Facebook className="h-4 w-4" /> Facebook
+                  </a>
+                  <a href={CONTACT.instagram} target="_blank" rel="noopener noreferrer" className="flex-1 flex items-center justify-center gap-2 h-11 rounded-full bg-gradient-to-r from-pink-500 to-amber-400 text-white text-sm font-medium">
+                    <Instagram className="h-4 w-4" /> Instagram
                   </a>
                 </div>
               </div>

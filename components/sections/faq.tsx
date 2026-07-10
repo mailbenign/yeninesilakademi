@@ -10,7 +10,7 @@ export function FAQ() {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section className="relative py-24 lg:py-32 bg-slate-50/60 dark:bg-navy-900/40 overflow-hidden">
+    <section id="sss" className="relative py-24 lg:py-32 bg-slate-50/60 dark:bg-navy-900/40 overflow-hidden">
       <div className="container-max section-padding">
         <div className="grid lg:grid-cols-12 gap-12">
           <div className="lg:col-span-5">

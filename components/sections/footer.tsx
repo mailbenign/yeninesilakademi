@@ -1,6 +1,6 @@
 'use client';
 
-import { GraduationCap, Instagram, MessageCircle, Phone, MapPin, Heart, ExternalLink } from 'lucide-react';
+import { Instagram, Facebook, Phone, MapPin, Heart } from 'lucide-react';
 import { NAV_LINKS, CONTACT } from '@/lib/data';
 import Image from 'next/image';
 
@@ -25,13 +25,16 @@ export function Footer() {
               İzmit'in yeni nesil lise ve üniversite hazırlık akademisi. Geleceğini bugünden inşa et.
             </p>
             <div className="mt-6 flex gap-3">
+              <a href={CONTACT.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="h-10 w-10 rounded-full bg-white/10 hover:bg-[#1877F2] flex items-center justify-center transition-all">
+                <Facebook className="h-5 w-5" />
+              </a>
               <a href={CONTACT.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="h-10 w-10 rounded-full bg-white/10 hover:bg-gradient-to-br hover:from-pink-500 hover:to-amber-400 flex items-center justify-center transition-all">
                 <Instagram className="h-5 w-5" />
               </a>
-              <a href={CONTACT.whatsapp} target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="h-10 w-10 rounded-full bg-white/10 hover:bg-[#25D366] flex items-center justify-center transition-all">
-                <MessageCircle className="h-5 w-5" />
-              </a>
               <a href={CONTACT.phoneHref} aria-label="Telefon" className="h-10 w-10 rounded-full bg-white/10 hover:bg-sky-500 flex items-center justify-center transition-all">
+                <Phone className="h-5 w-5" />
+              </a>
+              <a href={CONTACT.phone2Href} aria-label="İkinci telefon" className="h-10 w-10 rounded-full bg-white/10 hover:bg-sky-500 flex items-center justify-center transition-all">
                 <Phone className="h-5 w-5" />
               </a>
             </div>

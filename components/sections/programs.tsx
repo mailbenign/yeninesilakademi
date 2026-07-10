@@ -1,12 +1,10 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ArrowRight, Check, MessageCircle } from 'lucide-react';
-import { PROGRAMS, CONTACT } from '@/lib/data';
+import { ArrowRight, Check, Phone } from 'lucide-react';
+import { PROGRAMS } from '@/lib/data';
 import { Reveal, SectionHeading, Stagger, StaggerItem } from '@/components/reveal';
 import { Badge } from '@/components/ui/badge';
-
-const WA_SEVIYE = `${CONTACT.whatsapp}?text=${encodeURIComponent('Ücretsiz Seviye Tespiti sınavına katılmak istiyorum.')}`;
 
 export function Programs() {
   return (
@@ -68,7 +66,7 @@ export function Programs() {
                     href="#iletisim"
                     className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-navy-700 dark:text-white group/link"
                   >
-                    Detayları Gör
+                    Detaylar İçin Görüşelim
                     <ArrowRight className="h-4 w-4 group-hover/link:translate-x-1 transition-transform" />
                   </a>
                 </div>
@@ -93,12 +91,10 @@ export function Programs() {
                 </p>
               </div>
               <a
-                href={WA_SEVIYE}
-                target="_blank"
-                rel="noopener noreferrer"
+                href="#iletisim"
                 className="relative inline-flex items-center justify-center gap-2 h-12 rounded-full bg-white text-navy-700 font-semibold hover:bg-gold-300 hover:text-navy-900 transition-colors"
               >
-                <MessageCircle className="h-4 w-4" />
+                <Phone className="h-4 w-4" />
                 Ücretsiz Seviye Tespiti
               </a>
             </div>

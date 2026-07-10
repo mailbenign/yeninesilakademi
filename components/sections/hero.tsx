@@ -2,8 +2,8 @@
 
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ArrowRight, Sparkles, Star, GraduationCap, CheckCircle2 } from 'lucide-react';
-import { STATS, HERO_IMAGES } from '@/lib/data';
+import { ArrowRight, Sparkles, GraduationCap, CheckCircle2, Star } from 'lucide-react';
+import { HERO_IMAGES, ANNOUNCEMENT } from '@/lib/data';
 
 export function Hero() {
   const [imgIndex, setImgIndex] = useState(0);
@@ -102,31 +102,38 @@ export function Hero() {
               </a>
             </motion.div>
 
-            {/* Trust row */}
+            {/* Duyuru */}
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.7, delay: 0.4 }}
-              className="mt-8 flex items-center gap-4 justify-center lg:justify-start"
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.35 }}
+              className="mt-8 flex justify-center lg:justify-start"
             >
-              <div className="flex -space-x-3">
-                {[1, 2, 3, 4].map((i) => (
-                  <div
-                    key={i}
-                    className="h-9 w-9 rounded-full ring-2 ring-white dark:ring-navy-900 bg-gradient-to-br from-sky-200 to-navy-300 flex items-center justify-center text-xs font-bold text-navy-700"
-                  >
-                    {['E', 'A', 'Z', 'M'][i - 1]}
-                  </div>
-                ))}
-              </div>
-              <div className="text-left">
-                <div className="flex items-center gap-0.5">
-                  {[1, 2, 3, 4, 5].map((i) => (
-                    <Star key={i} className="h-3.5 w-3.5 fill-gold-400 text-gold-400" />
-                  ))}
+              <motion.div
+                animate={{ y: [0, -8, 0] }}
+                transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
+                className="glass-card p-4 sm:p-5 w-full max-w-md shadow-xl text-left"
+              >
+                <div className="flex items-center gap-2 mb-2">
+                  <div className="h-2 w-2 rounded-full bg-emerald-500" />
+                  <span className="text-xs font-semibold uppercase tracking-wider text-sky-600 dark:text-sky-400">
+                    {ANNOUNCEMENT.label}
+                  </span>
                 </div>
-                <p className="text-xs text-muted-foreground mt-0.5">Öğrencilerimizin tercihi</p>
-              </div>
+                <div className="flex items-start gap-3">
+                  <div className="h-10 w-10 rounded-lg bg-gradient-to-br from-gold-300 to-gold-500 flex items-center justify-center shrink-0">
+                    <Sparkles className="h-5 w-5 text-white" />
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold text-navy-700 dark:text-white">
+                      {ANNOUNCEMENT.badge}
+                    </p>
+                    <p className="mt-1 text-sm text-muted-foreground leading-relaxed">
+                      {ANNOUNCEMENT.text}
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
             </motion.div>
           </div>
 
@@ -166,38 +173,6 @@ export function Hero() {
                 ))}
               </div>
             </div>
-
-            {/* Floating card */}
-            <motion.div
-              animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
-              className="absolute -left-4 sm:-left-8 top-12 glass-card p-4 w-56 shadow-xl"
-            >
-              <div className="flex items-center gap-2 mb-1">
-                <div className="h-2 w-2 rounded-full bg-emerald-500" />
-                <span className="text-xs font-semibold text-navy-700 dark:text-white">Yeni Nesil Akademi</span>
-              </div>
-              <p className="text-sm font-medium text-navy-700 dark:text-white leading-snug">
-                Başarıya giden yolda Yeni Nesil Akademi yanınızda.
-              </p>
-            </motion.div>
-
-            {/* Second floating card */}
-            <motion.div
-              animate={{ y: [0, 10, 0] }}
-              transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
-              className="absolute -right-4 sm:-right-6 bottom-16 glass-card p-4 w-48 shadow-xl"
-            >
-              <div className="flex items-center gap-2 mb-2">
-                <div className="h-8 w-8 rounded-lg bg-gradient-to-br from-gold-300 to-gold-500 flex items-center justify-center">
-                  <Sparkles className="h-4 w-4 text-white" />
-                </div>
-                <span className="text-xs font-semibold text-navy-700 dark:text-white">Akademik Koçluk</span>
-              </div>
-              <p className="text-xs text-muted-foreground leading-relaxed">
-                Bireysel takip ile hedefe ulaş.
-              </p>
-            </motion.div>
           </motion.div>
         </div>
 
@@ -208,7 +183,7 @@ export function Hero() {
           transition={{ duration: 0.7, delay: 0.5 }}
           className="mt-16 lg:mt-24 grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6"
         >
-          {statLabels.map((stat, i) => (
+          {statLabels.map((stat) => (
             <div
               key={stat.label}
               className="relative glass-card p-5 lg:p-6 text-center group hover:-translate-y-1 transition-transform"

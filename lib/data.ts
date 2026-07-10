@@ -19,7 +19,9 @@ export const NAV_LINKS = [
   { label: 'Kurumsal', href: '#kurumsal' },
   { label: 'Programlarımız', href: '#programlar' },
   { label: 'Akademik Koçluk', href: '#akademik-kocluk' },
+  { label: 'Galeri', href: '#galeri' },
   { label: 'Blog', href: '#blog' },
+  { label: 'SSS', href: '#sss' },
   { label: 'İletişim', href: '#iletisim' },
 ];
 
@@ -28,9 +30,8 @@ export const CONTACT = {
   phoneHref: 'tel:+905317244641',
   phone2: '+90 553 430 11 98',
   phone2Href: 'tel:+905534301198',
-  whatsapp: 'https://wa.me/905317244641',
-  whatsappNumber: '+90 531 724 46 41',
   email: 'info@yeninesilakademi.com.tr',
+  facebook: 'https://www.facebook.com/profile.php?id=61588884123585',
   address: 'Fevziye Tramvay Durağına 10 metre\nÖmerağa Mahallesi Latif Bey Sokak No:9 Kat:3\nİzmit / KOCAELİ',
   addressMapsUrl: 'https://maps.app.goo.gl/EpyHZGmWbRrBXxdK6',
   hours: 'Pazartesi - Cumartesi: 09:00 - 21:00',
@@ -208,9 +209,9 @@ export const COACHING_STEPS: TimelineStep[] = [
   },
   {
     step: '06',
-    title: 'Üniversite Yerleştirme',
+    title: 'Yerleştirme',
     description:
-      'Tercih danışmanlığı ile öğrencinin puanına en uygun bölüm ve üniversite seçilir.',
+      'Tercih danışmanlığı ile öğrencinin puanına en uygun lise, bölüm veya üniversite seçilir.',
     icon: GraduationCap,
   },
 ];
@@ -262,10 +263,17 @@ export interface BlogPost {
   title: string;
   category: string;
   excerpt: string;
+  content: string;
   date: string;
   readTime: string;
   image: string;
 }
+
+export const ANNOUNCEMENT = {
+  label: 'Duyuru',
+  badge: 'Akademik Koçluk',
+  text: 'Bireysel takip ile hedefe ulaş.',
+};
 
 export const BLOG_CATEGORIES = [
   'Tümü',
@@ -285,6 +293,8 @@ export const BLOG_POSTS: BlogPost[] = [
     category: 'LGS',
     excerpt:
       "LGS'de başarıya ulaşmak için konu dağılımı, çalışma planı ve deneme stratejileri hakkında kapsamlı rehber.",
+    content:
+      "LGS'de başarıya ulaşmak için konu dağılımı, çalışma planı ve deneme stratejileri hakkında kapsamlı rehber.\n\nDüzenli tekrar, eksik konu analizi ve haftalık deneme sınavları ile öğrencilerimiz LGS sürecini planlı şekilde yönetir. Veli ve öğrenci birlikte hedef netleri belirleyerek ilerleme kaydeder.",
     date: '5 Temmuz 2025',
     readTime: '6 dk',
     image:
@@ -295,6 +305,8 @@ export const BLOG_POSTS: BlogPost[] = [
     category: 'LGS',
     excerpt:
       "LGS matematik sorularında öğrencilerin en çok düştüğü tuzaklar ve bunlardan kurtulmanın yolları.",
+    content:
+      "LGS matematik sorularında öğrencilerin en çok düştüğü tuzaklar ve bunlardan kurtulmanın yolları.\n\nİşlem hatası, süre yönetimi ve soru okuma dikkati en sık karşılaşılan problemlerdir. Konu tekrarı ile birlikte soru çözüm rutini oluşturmak net artışını hızlandırır.",
     date: '1 Temmuz 2025',
     readTime: '5 dk',
     image:
@@ -305,6 +317,8 @@ export const BLOG_POSTS: BlogPost[] = [
     category: 'TYT',
     excerpt:
       'Matematikte netlerinizi artırmak için uygulayabileceğiniz pratik ve etkili yöntemleri derledik.',
+    content:
+      'Matematikte netlerinizi artırmak için uygulayabileceğiniz pratik ve etkili yöntemleri derledik.\n\nTemel kavramları sağlamlaştırmak, günlük soru kotası belirlemek ve yanlış analizi yapmak TYT matematikte sürdürülebilir başarı sağlar.',
     date: '2 Temmuz 2025',
     readTime: '5 dk',
     image:
@@ -315,6 +329,8 @@ export const BLOG_POSTS: BlogPost[] = [
     category: 'AYT',
     excerpt:
       'AYT edebiyat sorularını hızlı ve doğru çözmek için kullanabileceğiniz stratejileri açıklıyoruz.',
+    content:
+      'AYT edebiyat sorularını hızlı ve doğru çözmek için kullanabileceğiniz stratejileri açıklıyoruz.\n\nEser-şair eşleştirmeleri, dönem bilgisi ve paragraf sorularında ana fikir tespiti düzenli çalışmayla kalıcı hale gelir.',
     date: '28 Haziran 2025',
     readTime: '7 dk',
     image:
@@ -325,6 +341,8 @@ export const BLOG_POSTS: BlogPost[] = [
     category: 'Yazılı Hazırlık',
     excerpt:
       'Dönem sonu yazılılarına sistematik hazırlanmak için uygulayabileceğiniz pratik bir plan.',
+    content:
+      'Dönem sonu yazılılarına sistematik hazırlanmak için uygulayabileceğiniz pratik bir plan.\n\nKonu özetleri, örnek soru çözümleri ve zamanlı tekrar programı ile yazılı haftasında stres azalır, performans artar.',
     date: '25 Haziran 2025',
     readTime: '6 dk',
     image:
@@ -335,6 +353,8 @@ export const BLOG_POSTS: BlogPost[] = [
     category: 'Sınav Psikolojisi',
     excerpt:
       'Sınav kaygısı performansı düşüren en önemli etkenlerden biri. İşte onu yönetmenin yolları.',
+    content:
+      'Sınav kaygısı performansı düşüren en önemli etkenlerden biri. İşte onu yönetmenin yolları.\n\nNefes egzersizleri, gerçekçi hedef belirleme ve deneme sınavı alışkanlığı öğrencinin sınav anındaki özgüvenini güçlendirir.',
     date: '24 Haziran 2025',
     readTime: '6 dk',
     image:
@@ -345,6 +365,8 @@ export const BLOG_POSTS: BlogPost[] = [
     category: 'Çalışma Teknikleri',
     excerpt:
       'Konsantrasyonu artıran ve verimi yükselten Pomodoro tekniğini nasıl uygulayabilirsiniz?',
+    content:
+      'Konsantrasyonu artıran ve verimi yükselten Pomodoro tekniğini nasıl uygulayabilirsiniz?\n\n25 dakika odaklanma ve 5 dakika mola döngüsü, uzun çalışma maratonlarında verimi korumanın en pratik yöntemlerinden biridir.',
     date: '20 Haziran 2025',
     readTime: '4 dk',
     image:
@@ -355,6 +377,8 @@ export const BLOG_POSTS: BlogPost[] = [
     category: 'YKS',
     excerpt:
       'Sınava sayılı günler kala hem zihinsel hem de akademik olarak nasıl hazırlanmalısınız?',
+    content:
+      'Sınava sayılı günler kala hem zihinsel hem de akademik olarak nasıl hazırlanmalısınız?\n\nSon günlerde ağır konu çalışmak yerine tekrar, deneme analizi ve dinlenme dengesi kurmak sınav performansını optimize eder.',
     date: '15 Haziran 2025',
     readTime: '8 dk',
     image:
@@ -365,6 +389,8 @@ export const BLOG_POSTS: BlogPost[] = [
     category: 'Motivasyon',
     excerpt:
       'Uzun ve yorucu hazırlık sürecinde motivasyonunuzu nasıl koruyabilirsiniz? İşte ipuçları.',
+    content:
+      'Uzun ve yorucu hazırlık sürecinde motivasyonunuzu nasıl koruyabilirsiniz? İşte ipuçları.\n\nKüçük hedefler belirlemek, ilerlemeyi görünür kılmak ve düzenli geri bildirim almak motivasyonu yüksek tutmanın temel adımlarıdır.',
     date: '10 Haziran 2025',
     readTime: '5 dk',
     image:

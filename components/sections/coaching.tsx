@@ -15,7 +15,7 @@ export function Coaching() {
               align="left"
               eyebrow="Akademik Koçluk"
               title={<>Hedeften başarıya <span className="text-gradient">6 adımlık yolculuk</span></>}
-              description="Akademik koçluk sistemimiz, öğrencinin hedefini belirleyip üniversiteye yerleşmesine kadar tüm süreci yapılandırır."
+              description="Akademik koçluk sistemimiz, öğrencinin hedefini belirleyip lise veya üniversiteye yerleşmesine kadar tüm süreci yapılandırır."
             />
 
             <Reveal delay={0.2} className="mt-8 relative">
