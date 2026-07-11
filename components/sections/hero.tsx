@@ -63,7 +63,7 @@ export function Hero() {
               className="inline-flex items-center gap-2 rounded-full glass px-4 py-2 text-sm font-medium text-navy-700 dark:text-white mb-6"
             >
               <Sparkles className="h-4 w-4 text-gold-400" />
-              <span>İzmit'in yeni nesil lise ve üniversite hazırlık akademisi</span>
+              <span>İzmit&apos;in yeni nesil lise ve üniversite hazırlık akademisi</span>
             </motion.div>
 
             <motion.h1
