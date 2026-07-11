@@ -3,14 +3,14 @@
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Sparkles, GraduationCap, CheckCircle2, Star } from 'lucide-react';
-import { HERO_IMAGES, ANNOUNCEMENT } from '@/lib/data';
+import { HERO_SLIDES, ANNOUNCEMENT } from '@/lib/data';
 
 export function Hero() {
   const [imgIndex, setImgIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setImgIndex((prev) => (prev + 1) % HERO_IMAGES.length);
+      setImgIndex((prev) => (prev + 1) % HERO_SLIDES.length);
     }, 5000);
     return () => clearInterval(interval);
   }, []);
@@ -115,7 +115,7 @@ export function Hero() {
                 className="glass-card p-4 sm:p-5 w-full max-w-md shadow-xl text-left"
               >
                 <div className="flex items-center gap-2 mb-2">
-                  <div className="h-2 w-2 rounded-full bg-emerald-500" />
+                  {/*<div className="h-2 w-2 rounded-full bg-emerald-500" />*/}
                   <span className="text-xs font-semibold uppercase tracking-wider text-sky-600 dark:text-sky-400">
                     {ANNOUNCEMENT.label}
                   </span>
@@ -148,7 +148,7 @@ export function Hero() {
               <AnimatePresence mode="wait">
                 <motion.img
                   key={imgIndex}
-                  src={HERO_IMAGES[imgIndex]}
+                  src={HERO_SLIDES[imgIndex].image}
                   alt="Yeni Nesil Akademi"
                   initial={{ opacity: 0, scale: 1.04 }}
                   animate={{ opacity: 1, scale: 1 }}
@@ -161,7 +161,7 @@ export function Hero() {
 
               {/* Slide indicator dots */}
               <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
-                {HERO_IMAGES.map((_, i) => (
+                {HERO_SLIDES.map((_, i) => (
                   <button
                     key={i}
                     aria-label={`Resim ${i + 1}`}

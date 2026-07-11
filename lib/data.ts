@@ -270,7 +270,7 @@ export interface BlogPost {
 }
 
 export const ANNOUNCEMENT = {
-  label: 'Duyuru',
+  label: '',
   badge: 'Akademik Koçluk',
   text: 'Bireysel takip ile hedefe ulaş.',
 };
@@ -448,14 +448,106 @@ export const AI_SUGGESTIONS = [
   'Ücretler hakkında bilgi al',
 ];
 
-export const HERO_IMAGES = [
-  '/10_ve_11_siniflar_avamtaj.jpg',
-  '/11_ve_12_siniflar_icin.jpg',
-  '/2027_yks_2.jpg',
-  '/2027_yks.jpg',
-  '/birebir_ozel_ders copy.jpg',
-  '/deneme_kulubu copy.jpg',
-  '/hosgeldiniz copy.jpg',
-  '/kisiye_ozel copy.jpg',
-  '/kutuphane copy.jpg',
+export interface HeroSlide {
+  id: number;
+  title: string;
+  subtitle: string;
+  image: string;
+  buttonText: string;
+  buttonLink: string;
+  active: boolean;
+}
+
+export const HERO_SLIDES: HeroSlide[] = [
+  {
+    id: 1,
+    title: "",
+    subtitle: "",
+    image: "/2027_yks_2.jpg",
+    buttonText: "",
+    buttonLink: "",
+    active: true,
+  },
+
+  {
+    id: 2,
+    title: "BİREBİR EĞİTİM KOÇLUĞU",
+    subtitle: "",
+    image: "/birebir_ozel_ders.jpg",
+    buttonText: "",
+    buttonLink: "/programlar",
+    active: true,
+  },
+
+  {
+    id: 3,
+    title: "DENEME SINAVLARI VE ANALİZLER",
+    subtitle:
+      "",
+    image: "/deneme_kulubu.jpg",
+    buttonText: "",
+    buttonLink: "",
+    active: true,
+  },
+
+  {
+    id: 4,
+    title: "",
+    subtitle: "",
+    image: "/kisiye_ozel.jpg",
+    buttonText: "",
+    buttonLink: "/iletisim",
+    active: true,
+  },
+
+  {
+    id: 5,
+    title: "",
+    subtitle: "",
+    image: "/10_ve_11_siniflar_avantaj.jpg",
+    buttonText: "",
+    buttonLink: "",
+    active: true,
+  },
+
+  {
+    id: 5,
+    title: "",
+    subtitle: "",
+    image: "/11_ve_12_siniflar_icin.jpg",
+    buttonText: "",
+    buttonLink: "",
+    active: true,
+  },
+
+  {
+    id: 5,
+    title: "",
+    subtitle: "",
+    image: "/2027_yks.jpg",
+    buttonText: "",
+    buttonLink: "",
+    active: true,
+  },
+
+  {
+    id: 5,
+    title: "",
+    subtitle: "",
+    image: "/hosgeldiniz.jpg",
+    buttonText: "",
+    buttonLink: "",
+    active: true,
+  },
+
+  {
+    id: 5,
+    title: "",
+    subtitle: "",
+    image: "/kutuphane.jpg",
+    buttonText: "",
+    buttonLink: "",
+    active: true,
+  }
+
 ];
