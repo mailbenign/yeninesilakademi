@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X, ChevronLeft, ChevronRight, ZoomIn } from 'lucide-react';
 import { GALLERY } from '@/lib/data';
 import { SectionHeading, Stagger, StaggerItem } from '@/components/reveal';
+import Image from "next/image";
 
 export function Gallery() {
   const [lightbox, setLightbox] = useState<number | null>(null);
@@ -52,11 +53,13 @@ export function Gallery() {
                     </div>
                   </>
                 ) : (
-                  <img
-                    src={img.src}
-                    alt={img.alt}
-                    loading="lazy"
-                    className="absolute inset-0 h-full w-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  <Image
+                      src={img.src}
+                      alt={img.alt}
+                      fill
+                      loading="lazy"
+                      sizes="(max-width:768px) 50vw, 25vw"
+                      className="absolute inset-0 object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                 )}
                 <div className="absolute inset-0 bg-navy-900/0 group-hover:bg-navy-900/40 transition-colors duration-300" />
@@ -113,20 +116,26 @@ export function Gallery() {
               {GALLERY[lightbox].type === "video" ? (
                 <video
                   controls
-                  autoPlay
                   loop
+                  autoPlay
                   playsInline
+                  preload="metadata"
+                  muted
                   className="max-h-[100vh] max-w-[500px] w-full mx-auto rounded-2xl shadow-2xl"
                 >
                   <source src={GALLERY[lightbox].src} type="video/mp4" />
                   Tarayıcınız video etiketini desteklemiyor.
                 </video>
               ) : (
-                <img
-                  src={GALLERY[lightbox].src}
-                  alt={GALLERY[lightbox].alt}
-                  className="w-full h-auto max-h-[80vh] object-contain rounded-2xl"
-                />
+                <div className="relative w-full h-[80vh]">
+                    <Image
+                        src={GALLERY[lightbox].src}
+                        alt={GALLERY[lightbox].alt}
+                        fill
+                        sizes="100vw"
+                        className="object-contain rounded-2xl"
+                    />
+                </div>
               )}
               <p className="mt-4 text-center text-white/80">{GALLERY[lightbox].alt}</p>
             </motion.div>

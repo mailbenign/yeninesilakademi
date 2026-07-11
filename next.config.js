@@ -1,9 +1,11 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
-  images: { unoptimized: true },
-};
 
-module.exports = nextConfig;
+const nextConfig = {
+
+  images: {
+    formats: ['image/webp','image/avif'],
+  },
+
+}
+
+module.exports = nextConfig

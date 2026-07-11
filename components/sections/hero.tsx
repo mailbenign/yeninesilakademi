@@ -4,16 +4,32 @@ import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Sparkles, GraduationCap, CheckCircle2, Star } from 'lucide-react';
 import { HERO_SLIDES, ANNOUNCEMENT } from '@/lib/data';
+import Image from "next/image";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export function Hero() {
   const [imgIndex, setImgIndex] = useState(0);
+  const [paused, setPaused] = useState(false);
+
+  const nextImage = () => {
+    setImgIndex((prev) => (prev + 1) % HERO_SLIDES.length);
+  };
+
+  const prevImage = () => {
+    setImgIndex((prev) => (prev - 1 + HERO_SLIDES.length) % HERO_SLIDES.length);
+  };
 
   useEffect(() => {
+
+    if (paused) return;
+
     const interval = setInterval(() => {
-      setImgIndex((prev) => (prev + 1) % HERO_SLIDES.length);
+      nextImage();
     }, 5000);
+
     return () => clearInterval(interval);
-  }, []);
+
+  }, [paused]);
 
   const statLabels = [
     { icon: CheckCircle2, label: 'Mutlu Öğrenciler' },
@@ -144,18 +160,39 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="lg:col-span-5 relative"
           >
-            <div className="relative aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl shadow-navy-700/20">
+            <div
+              className="relative aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl shadow-navy-700/20"
+              onMouseEnter={() => setPaused(true)}
+              onMouseLeave={() => setPaused(false)}
+            >
+              <button
+                onClick={prevImage}
+                aria-label="Önceki Resim"
+                className="absolute left-0 top-0 z-20 h-full w-1/2 bg-transparent"
+              />
               <AnimatePresence mode="wait">
-                <motion.img
-                  key={imgIndex}
+                <motion.div
+                key={imgIndex}
+                initial={{ opacity: 0, scale: 1.04 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.97 }}
+                transition={{ duration: 0.7 }}
+                className="absolute inset-0"
+              >
+              <button
+                  onClick={nextImage}
+                  aria-label="Sonraki Resim"
+                  className="absolute right-0 top-0 z-20 h-full w-1/2 bg-transparent"
+              />
+                <Image
                   src={HERO_SLIDES[imgIndex].image}
                   alt="Yeni Nesil Akademi"
-                  initial={{ opacity: 0, scale: 1.04 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.97 }}
-                  transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-                  className="absolute inset-0 h-full w-full object-cover object-top"
+                  fill
+                  priority={imgIndex === 0}
+                  sizes="(max-width:768px) 100vw, 40vw"
+                  className="object-cover object-top"
                 />
+              </motion.div>
               </AnimatePresence>
               <div className="absolute inset-0 bg-gradient-to-t from-navy-900/50 via-transparent to-transparent" />
 
