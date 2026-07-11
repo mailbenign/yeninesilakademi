@@ -217,6 +217,7 @@ export const COACHING_STEPS: TimelineStep[] = [
 ];
 
 export interface GalleryImage {
+  type: "image" | "video";
   src: string;
   alt: string;
   span?: string;
@@ -224,38 +225,44 @@ export interface GalleryImage {
 
 export const GALLERY: GalleryImage[] = [
   {
-    src: 'https://images.pexels.com/photos/5212317/pexels-photo-5212317.jpeg?auto=compress&cs=tinysrgb&w=800',
-    alt: 'Sınıfta ders anı',
-    span: 'row-span-2',
+    type: "video",
+    src: '/yeninesilakademi.mp4',
+    alt: 'Yeni Nesil Akademi',
   },
   {
-    src: 'https://images.pexels.com/photos/5212703/pexels-photo-5212703.jpeg?auto=compress&cs=tinysrgb&w=800',
-    alt: 'Öğrenciler çalışıyor',
+    type: "video",
+    src: '/yeninesilakademi_1.mp4',
+    alt: 'Yeni Nesil Akademi',
   },
   {
-    src: 'https://images.pexels.com/photos/5212343/pexels-photo-5212343.jpeg?auto=compress&cs=tinysrgb&w=800',
-    alt: 'Grup çalışması',
+    type: "video",
+    src: 'kütüphane.mp4',
+    alt: 'Kütüphane',
   },
   {
-    src: 'https://images.pexels.com/photos/5212325/pexels-photo-5212325.jpeg?auto=compress&cs=tinysrgb&w=800',
-    alt: 'Sınav hazırlığı',
-    span: 'row-span-2',
+    type: "video",
+    src: 'eğitim_programı.mp4',
+    alt: 'Eğitim Programı',
+    
   },
   {
-    src: 'https://images.pexels.com/photos/5212695/pexels-photo-5212695.jpeg?auto=compress&cs=tinysrgb&w=800',
+    src: '/birebir_ders.jpg',
     alt: 'Birebir ders',
+    span: 'row-span-2',
   },
   {
-    src: 'https://images.pexels.com/photos/5212315/pexels-photo-5212315.jpeg?auto=compress&cs=tinysrgb&w=800',
+    src: '/eğitmen_ve_öğrenci.jpg',
     alt: 'Eğitmen ve öğrenci',
   },
   {
-    src: 'https://images.pexels.com/photos/5212705/pexels-photo-5212705.jpeg?auto=compress&cs=tinysrgb&w=800',
-    alt: 'Konferans salonu',
+    type: "video",
+    src: 'öğrenciler_çalışıyor.mp4',
+    alt: 'Öğrenciler çalışıyor',
   },
   {
-    src: 'https://images.pexels.com/photos/5212658/pexels-photo-5212658.jpeg?auto=compress&cs=tinysrgb&w=800',
-    alt: 'Laboratuvar çalışması',
+    type: "video",
+    src: 'koçluk.mp4',
+    alt: 'Akademik Koçluk',
   },
 ];
 

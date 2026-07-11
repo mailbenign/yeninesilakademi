@@ -34,12 +34,31 @@ export function Gallery() {
                 aria-label={img.alt}
                 className="absolute inset-0 h-full w-full"
               >
-                <img
-                  src={img.src}
-                  alt={img.alt}
-                  loading="lazy"
-                  className="absolute inset-0 h-full w-full object-cover group-hover:scale-110 transition-transform duration-700"
-                />
+                {img.type === "video" ? (
+                  <>
+                    <video
+                      className="absolute inset-0 h-full w-full object-cover"
+                      muted
+                      playsInline
+                      preload="metadata"
+                    >
+                      <source src={img.src} type="video/mp4" />
+                    </video>
+
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="w-16 h-16 rounded-full bg-white/80 flex items-center justify-center text-2xl">
+                        ▶
+                      </div>
+                    </div>
+                  </>
+                ) : (
+                  <img
+                    src={img.src}
+                    alt={img.alt}
+                    loading="lazy"
+                    className="absolute inset-0 h-full w-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  />
+                )}
                 <div className="absolute inset-0 bg-navy-900/0 group-hover:bg-navy-900/40 transition-colors duration-300" />
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
                   <div className="h-12 w-12 rounded-full bg-white/90 flex items-center justify-center">
@@ -91,11 +110,24 @@ export function Gallery() {
               className="relative max-w-4xl w-full"
               onClick={(e) => e.stopPropagation()}
             >
-              <img
-                src={GALLERY[lightbox].src}
-                alt={GALLERY[lightbox].alt}
-                className="w-full h-auto max-h-[80vh] object-contain rounded-2xl"
-              />
+              {GALLERY[lightbox].type === "video" ? (
+                <video
+                  controls
+                  autoPlay
+                  loop
+                  playsInline
+                  className="max-h-[100vh] max-w-[500px] w-full mx-auto rounded-2xl shadow-2xl"
+                >
+                  <source src={GALLERY[lightbox].src} type="video/mp4" />
+                  Tarayıcınız video etiketini desteklemiyor.
+                </video>
+              ) : (
+                <img
+                  src={GALLERY[lightbox].src}
+                  alt={GALLERY[lightbox].alt}
+                  className="w-full h-auto max-h-[80vh] object-contain rounded-2xl"
+                />
+              )}
               <p className="mt-4 text-center text-white/80">{GALLERY[lightbox].alt}</p>
             </motion.div>
           </motion.div>
