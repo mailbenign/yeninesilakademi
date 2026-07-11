@@ -246,11 +246,13 @@ export const GALLERY: GalleryImage[] = [
     
   },
   {
+    type: "image",
     src: '/birebir_ders.jpg',
     alt: 'Birebir ders',
     span: 'row-span-2',
   },
   {
+    type: "image",
     src: '/eğitmen_ve_öğrenci.jpg',
     alt: 'Eğitmen ve öğrenci',
   },
