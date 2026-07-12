@@ -19,7 +19,7 @@ export function Footer() {
               alt="Yeni Nesil Akademi"
               width={180}
               height={70}
-              className="h-14 w-auto object-contain mb-5 brightness-0 invert"
+              className="h-14 w-auto object-contain mb-5"
             />
             <p className="text-sm text-white/60 leading-relaxed max-w-xs">
               İzmit&apos;in yeni nesil lise ve üniversite hazırlık akademisi. Geleceğini bugünden inşa et.
