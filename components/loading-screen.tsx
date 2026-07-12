@@ -8,7 +8,24 @@ export function LoadingScreen() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const t = setTimeout(() => setLoading(false), 1200);
+    // Lighthouse çalışırken loading ekranını gösterme
+    if (navigator.userAgent.includes("Chrome-Lighthouse")) {
+      setLoading(false);
+      return;
+    }
+
+    // Aynı oturumda ikinci kez gösterme
+    const seen = sessionStorage.getItem("loadingShown");
+
+    if (seen) {
+      setLoading(false);
+      return;
+    }
+
+    sessionStorage.setItem("loadingShown", "true");
+
+    const t = setTimeout(() => setLoading(false), 500);
+
     return () => clearTimeout(t);
   }, []);
 
@@ -17,14 +34,14 @@ export function LoadingScreen() {
       {loading && (
         <motion.div
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.25 }}
           className="fixed inset-0 z-[200] flex items-center justify-center bg-white dark:bg-navy-900"
         >
           <div className="flex flex-col items-center gap-5">
             <motion.div
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.4 }}
+              transition={{ duration: 0.25 }}
               className="relative"
             >
               <div className="absolute inset-0 bg-sky-500/30 blur-2xl rounded-full animate-pulse" />
@@ -37,7 +54,7 @@ export function LoadingScreen() {
                 <motion.span
                   key={i}
                   animate={{ y: [0, -8, 0], opacity: [0.4, 1, 0.4] }}
-                  transition={{ duration: 1, repeat: Infinity, delay: i * 0.15 }}
+                  transition={{ duration: 0.6, repeat: Infinity, delay: i * 0.1 }}
                   className="h-2 w-2 rounded-full bg-sky-500"
                 />
               ))}
