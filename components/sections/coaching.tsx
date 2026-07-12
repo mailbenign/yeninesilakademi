@@ -24,6 +24,7 @@ export function Coaching() {
                 <Image
                   src="https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=900"
                   alt="Akademik koçluk"
+                  fill
                   loading="lazy"
                   className="absolute inset-0 h-full w-full object-cover"
                 />
