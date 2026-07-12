@@ -17,8 +17,8 @@ export function Footer() {
             <Image
               src="/logo_yeninesilakademi.webp"
               alt="Yeni Nesil Akademi"
-              width={180}
-              height={70}
+              width={350}
+              height={188}
               className="h-14 w-auto object-contain mb-5"
             />
             <p className="text-sm text-white/60 leading-relaxed max-w-xs">
