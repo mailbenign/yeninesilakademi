@@ -41,7 +41,7 @@ export function Contact() {
               <div className="absolute inset-0 bg-navy-900/0 group-hover:bg-navy-900/10 transition-colors flex items-end justify-end p-4">
                 <span className="inline-flex items-center gap-1.5 rounded-full bg-white/90 backdrop-blur px-4 py-2 text-sm font-medium text-navy-700 opacity-0 group-hover:opacity-100 transition-opacity">
                   <ExternalLink className="h-4 w-4" />
-                  Google Haritalar'da Aç
+                  Google Haritalar&apos;da Aç
                 </span>
               </div>
             </a>

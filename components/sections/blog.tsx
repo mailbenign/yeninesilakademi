@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Clock, Calendar, ChevronUp } from 'lucide-react';
 import { BLOG_CATEGORIES, BLOG_POSTS } from '@/lib/data';
 import { SectionHeading, Stagger, StaggerItem } from '@/components/reveal';
+import Image from "next/image";
 
 export function Blog() {
   const [active, setActive] = useState('Tümü');
@@ -62,11 +63,13 @@ export function Blog() {
                   <StaggerItem key={post.title}>
                     <article className="group h-full overflow-hidden rounded-3xl bg-white dark:bg-navy-800 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-2xl hover:shadow-navy-700/10 transition-all duration-500 hover:-translate-y-1.5">
                       <div className="relative h-48 overflow-hidden">
-                        <img
+                        <Image
                           src={post.image}
                           alt={post.title}
+                          fill
                           loading="lazy"
-                          className="absolute inset-0 h-full w-full object-cover group-hover:scale-110 transition-transform duration-700"
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                          className="object-cover group-hover:scale-110 transition-transform duration-700"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-navy-900/40 to-transparent" />
                         <span className="absolute top-4 left-4 inline-block rounded-full bg-sky-500 px-3 py-1 text-xs font-semibold text-white">

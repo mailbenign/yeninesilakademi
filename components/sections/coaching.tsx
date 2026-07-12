@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { COACHING_STEPS } from '@/lib/data';
 import { Reveal, SectionHeading, Stagger, StaggerItem } from '@/components/reveal';
+import Image from "next/image";
 
 export function Coaching() {
   return (
@@ -20,7 +21,7 @@ export function Coaching() {
 
             <Reveal delay={0.2} className="mt-8 relative">
               <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl shadow-navy-700/20">
-                <img
+                <Image
                   src="https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=900"
                   alt="Akademik koçluk"
                   loading="lazy"
@@ -29,7 +30,7 @@ export function Coaching() {
                 <div className="absolute inset-0 bg-gradient-to-t from-navy-900/70 to-transparent" />
                 <div className="absolute bottom-6 left-6 right-6">
                   <p className="text-white font-display text-lg font-semibold">
-                    "Her öğrencinin potansiyeli vardır, yeter ki doğru yönlendirme olsun."
+                    &quot;Her öğrencinin potansiyeli vardır, yeter ki doğru yönlendirme olsun.&quot;
                   </p>
                   <p className="mt-2 text-sm text-white/70">— Akademik Koçluk Ekibi</p>
                 </div>

@@ -5,6 +5,7 @@ import { ArrowRight, Check, Phone } from 'lucide-react';
 import { PROGRAMS } from '@/lib/data';
 import { Reveal, SectionHeading, Stagger, StaggerItem } from '@/components/reveal';
 import { Badge } from '@/components/ui/badge';
+import Image from "next/image";
 
 export function Programs() {
   return (
@@ -25,11 +26,13 @@ export function Programs() {
               <div className="group relative h-full overflow-hidden rounded-3xl bg-white dark:bg-navy-800 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-2xl hover:shadow-navy-700/10 transition-all duration-500 hover:-translate-y-1.5">
                 {/* Image */}
                 <div className="relative h-52 overflow-hidden">
-                  <img
+                  <Image
                     src={program.image}
                     alt={program.title}
+                    fill
                     loading="lazy"
-                    className="absolute inset-0 h-full w-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-navy-900/80 via-navy-900/20 to-transparent" />
                   {program.badge && (

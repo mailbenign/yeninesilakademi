@@ -22,7 +22,7 @@ export function Footer() {
               className="h-14 w-auto object-contain mb-5 brightness-0 invert"
             />
             <p className="text-sm text-white/60 leading-relaxed max-w-xs">
-              İzmit'in yeni nesil lise ve üniversite hazırlık akademisi. Geleceğini bugünden inşa et.
+              İzmit&apos;in yeni nesil lise ve üniversite hazırlık akademisi. Geleceğini bugünden inşa et.
             </p>
             <div className="mt-6 flex gap-3">
               <a href={CONTACT.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="h-10 w-10 rounded-full bg-white/10 hover:bg-[#1877F2] flex items-center justify-center transition-all">
@@ -106,7 +106,7 @@ export function Footer() {
 
         <p className="mt-6 text-center text-xs text-white/40 flex items-center justify-center gap-1.5">
           <Heart className="h-3 w-3 text-pink-400 fill-pink-400" />
-          İzmit'ten geleceğe sevgiyle hazırlandı.
+          İzmit&apos;ten geleceğe sevgiyle hazırlandı.
         </p>
       </div>
     </footer>
