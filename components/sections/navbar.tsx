@@ -46,7 +46,7 @@ export function Navbar() {
           {/* Logo */}
           <a href="#anasayfa" className="flex items-center">
             <Image
-              src="/yeninesilakademi_logo.png"
+              src="/logo_yeninesilakademi.webp"
               alt="Yeni Nesil Akademi"
               width={160}
               height={60}
@@ -149,7 +149,7 @@ export function Navbar() {
             >
               <div className="flex items-center justify-between h-16 px-5 border-b border-slate-100 dark:border-white/10">
                 <Image
-                  src="/yeninesilakademi_logo.png"
+                  src="/logo_yeninesilakademi.webp"
                   alt="Yeni Nesil Akademi"
                   width={120}
                   height={45}
