@@ -369,7 +369,7 @@ export const BLOG_POSTS: BlogPost[] = [
       'Konsantrasyonu artıran ve verimi yükselten Pomodoro tekniğini nasıl uygulayabilirsiniz?\n\n25 dakika odaklanma ve 5 dakika mola döngüsü, uzun çalışma maratonlarında verimi korumanın en pratik yöntemlerinden biridir.',
     date: '20 Haziran 2025',
     readTime: '4 dk',
-    image: '/blog_sınavlara_hazırlanma.webp',
+    image: '/blog_pomodore.webp',
   },
   {
     title: 'YKS Son Günlerde Yapılması Gerekenler',
