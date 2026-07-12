@@ -107,8 +107,7 @@ export const PROGRAMS: Program[] = [
     grade: '6. ve 7. Sınıflar',
     description:
       'Ortaokul döneminde güçlü bir temel oluşturun. Ders alışkanlığı ve akademik gelişim için doğru başlangıç.',
-    image:
-      'https://images.pexels.com/photos/5212317/pexels-photo-5212317.jpeg?auto=compress&cs=tinysrgb&w=900',
+    image: '/programlarımız_6ve7_sınıflar.webp',
     features: ['Temel Kavram Eğitimi', 'Çalışma Alışkanlığı', 'Haftalık Değerlendirme'],
     badge: 'Ortaokul',
   },
@@ -117,8 +116,7 @@ export const PROGRAMS: Program[] = [
     grade: '8. Sınıf',
     description:
       'LGS\'ye kapsamlı hazırlık. Tüm dersler için yoğun konu tekrarı, deneme sınavları ve bireysel takip.',
-    image:
-      'https://images.pexels.com/photos/5212703/pexels-photo-5212703.jpeg?auto=compress&cs=tinysrgb&w=900',
+    image: '/blog_lgs_hazırlık.webp',
     features: ['LGS Tam Kapsam', 'Soru Çözüm Teknikleri', 'Deneme Sınavları'],
     badge: 'LGS',
   },
@@ -128,7 +126,7 @@ export const PROGRAMS: Program[] = [
     description:
       'Liseye güçlü bir başlangıç. Temel kavramların atıldığı kritik yılda akademik altyapıyı sağlamlaştırın.',
     image:
-      'https://images.pexels.com/photos/5212343/pexels-photo-5212343.jpeg?auto=compress&cs=tinysrgb&w=900',
+      '/programlarımız_9._sınıflar.webp',
     features: ['Temel Kavram Eğitimi', 'Çalışma Alışkanlığı', 'Haftalık Test'],
     badge: 'Lise',
   },
@@ -137,8 +135,7 @@ export const PROGRAMS: Program[] = [
     grade: '10. Sınıf',
     description:
       'TYT konularına erken başlayan öğrenciler için yoğun temel eğitim ve konu pekiştirme programı.',
-    image:
-      'https://images.pexels.com/photos/5212325/pexels-photo-5212325.jpeg?auto=compress&cs=tinysrgb&w=900',
+    image: '/programlarımız_10._sınıflar.webp',
     features: ['TYT Temel Konular', 'Soru Çözüm Teknikleri', 'Konu Tarama'],
     badge: 'Popüler',
   },
@@ -148,7 +145,7 @@ export const PROGRAMS: Program[] = [
     description:
       'AYT odaklı branş derslerinin başladığı yılda hedef bölüme yönelik stratejik hazırlık süreci.',
     image:
-      'https://images.pexels.com/photos/5212695/pexels-photo-5212695.jpeg?auto=compress&cs=tinysrgb&w=900',
+      '/programlarımız11._sınıflar.webp',
     features: ['AYT Branş Dersleri', 'Hedef Bölüm Analizi', 'Deneme Sınavları'],
     badge: 'Hedef Odaklı',
   },
@@ -158,7 +155,7 @@ export const PROGRAMS: Program[] = [
     description:
       'Sınava son bir yıl kala tam kapsamlı hazırlık. Yoğun deneme, taktik ve motivasyon programı. Mezun öğrenciler için esnek saatli seçenekler mevcuttur.',
     image:
-      'https://images.pexels.com/photos/5212315/pexels-photo-5212315.jpeg?auto=compress&cs=tinysrgb&w=900',
+      '/programlarımız_yks.webp',
     features: ['Tam Kapsamlı Tekrar', 'Sınav Taktikleri', 'Esnek Saatler (Mezun)'],
     badge: 'YKS Final',
   },
@@ -226,44 +223,43 @@ export interface GalleryImage {
 export const GALLERY: GalleryImage[] = [
   {
     type: "video",
-    src: '/yeninesilakademi.mp4',
+    src: '/galeri_yeninesilakademi.mp4',
     alt: 'Yeni Nesil Akademi',
   },
   {
     type: "video",
-    src: '/yeninesilakademi_1.mp4',
+    src: '/galeri_yeninesilakademi_1.mp4',
     alt: 'Yeni Nesil Akademi',
   },
   {
     type: "video",
-    src: 'kütüphane.mp4',
+    src: '/galeri_kütüphane.mp4',
     alt: 'Kütüphane',
   },
   {
     type: "video",
-    src: 'eğitim_programı.mp4',
+    src: '/galeri_eğitim_programı.mp4',
     alt: 'Eğitim Programı',
     
   },
   {
-    type: "image",
-    src: '/birebir_ders.webp',
-    alt: 'Birebir ders',
-    span: 'row-span-2',
-  },
-  {
-    type: "image",
-    src: '/eğitmen_ve_öğrenci.webp',
-    alt: 'Eğitmen ve öğrenci',
+    type: "video",
+    src: '/galeri_yeni_nesil_ders_çalışma.mp4',
+    alt: 'Yeni nesil ders çalışma',
   },
   {
     type: "video",
-    src: 'öğrenciler_çalışıyor.mp4',
+    src: '/galeri_koçluk_sistemi.mp4',
+    alt: 'Koçluk sistemi',
+  },
+  {
+    type: "video",
+    src: '/galeri_öğrenciler_çalışıyor.mp4',
     alt: 'Öğrenciler çalışıyor',
   },
   {
     type: "video",
-    src: 'koçluk.mp4',
+    src: '/galeri_koçluk.mp4',
     alt: 'Akademik Koçluk',
   },
 ];
@@ -306,8 +302,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "LGS'de başarıya ulaşmak için konu dağılımı, çalışma planı ve deneme stratejileri hakkında kapsamlı rehber.\n\nDüzenli tekrar, eksik konu analizi ve haftalık deneme sınavları ile öğrencilerimiz LGS sürecini planlı şekilde yönetir. Veli ve öğrenci birlikte hedef netleri belirleyerek ilerleme kaydeder.",
     date: '5 Temmuz 2025',
     readTime: '6 dk',
-    image:
-      'https://images.pexels.com/photos/5212317/pexels-photo-5212317.jpeg?auto=compress&cs=tinysrgb&w=900',
+    image: '/blog_lgs_hazırlık.webp',
   },
   {
     title: 'LGS Matematik: Sıkça Yapılan Hatalar ve Çözümleri',
@@ -318,8 +313,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "LGS matematik sorularında öğrencilerin en çok düştüğü tuzaklar ve bunlardan kurtulmanın yolları.\n\nİşlem hatası, süre yönetimi ve soru okuma dikkati en sık karşılaşılan problemlerdir. Konu tekrarı ile birlikte soru çözüm rutini oluşturmak net artışını hızlandırır.",
     date: '1 Temmuz 2025',
     readTime: '5 dk',
-    image:
-      'https://images.pexels.com/photos/6238048/pexels-photo-6238048.jpeg?auto=compress&cs=tinysrgb&w=900',
+    image: '/blog_lgs_matematik.webp',
   },
   {
     title: 'TYT Matematikte Net Artırmanın 5 Altın Kuralı',
@@ -331,7 +325,7 @@ export const BLOG_POSTS: BlogPost[] = [
     date: '2 Temmuz 2025',
     readTime: '5 dk',
     image:
-      'https://images.pexels.com/photos/6238048/pexels-photo-6238048.jpeg?auto=compress&cs=tinysrgb&w=900',
+      '/blog_tyt_matematik.webp',
   },
   {
     title: 'AYT Edebiyat: Soru Çözüm Teknikleri',
@@ -342,8 +336,7 @@ export const BLOG_POSTS: BlogPost[] = [
       'AYT edebiyat sorularını hızlı ve doğru çözmek için kullanabileceğiniz stratejileri açıklıyoruz.\n\nEser-şair eşleştirmeleri, dönem bilgisi ve paragraf sorularında ana fikir tespiti düzenli çalışmayla kalıcı hale gelir.',
     date: '28 Haziran 2025',
     readTime: '7 dk',
-    image:
-      'https://images.pexels.com/photos/5905902/pexels-photo-5905902.jpeg?auto=compress&cs=tinysrgb&w=900',
+    image: '/blog_ayt_edebiyat.webp',
   },
   {
     title: 'Yazılı Sınavlara Nasıl Hazırlanmalısınız?',
@@ -354,8 +347,7 @@ export const BLOG_POSTS: BlogPost[] = [
       'Dönem sonu yazılılarına sistematik hazırlanmak için uygulayabileceğiniz pratik bir plan.\n\nKonu özetleri, örnek soru çözümleri ve zamanlı tekrar programı ile yazılı haftasında stres azalır, performans artar.',
     date: '25 Haziran 2025',
     readTime: '6 dk',
-    image:
-      'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=900',
+    image: '/blog_sınavlara_hazırlık.webp',
   },
   {
     title: 'Sınav Kaygısıyla Başa Çıkmanın Yolları',
@@ -366,8 +358,7 @@ export const BLOG_POSTS: BlogPost[] = [
       'Sınav kaygısı performansı düşüren en önemli etkenlerden biri. İşte onu yönetmenin yolları.\n\nNefes egzersizleri, gerçekçi hedef belirleme ve deneme sınavı alışkanlığı öğrencinin sınav anındaki özgüvenini güçlendirir.',
     date: '24 Haziran 2025',
     readTime: '6 dk',
-    image:
-      'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=900',
+    image: '/blog_sınav_kaygısı.webp',
   },
   {
     title: 'Verimli Çalışmanın Sırrı: Pomodoro Tekniği',
@@ -378,8 +369,7 @@ export const BLOG_POSTS: BlogPost[] = [
       'Konsantrasyonu artıran ve verimi yükselten Pomodoro tekniğini nasıl uygulayabilirsiniz?\n\n25 dakika odaklanma ve 5 dakika mola döngüsü, uzun çalışma maratonlarında verimi korumanın en pratik yöntemlerinden biridir.',
     date: '20 Haziran 2025',
     readTime: '4 dk',
-    image:
-      'https://images.pexels.com/photos/3184325/pexels-photo-3184325.jpeg?auto=compress&cs=tinysrgb&w=900',
+    image: '/blog_sınavlara_hazırlanma.webp',
   },
   {
     title: 'YKS Son Günlerde Yapılması Gerekenler',
@@ -390,8 +380,7 @@ export const BLOG_POSTS: BlogPost[] = [
       'Sınava sayılı günler kala hem zihinsel hem de akademik olarak nasıl hazırlanmalısınız?\n\nSon günlerde ağır konu çalışmak yerine tekrar, deneme analizi ve dinlenme dengesi kurmak sınav performansını optimize eder.',
     date: '15 Haziran 2025',
     readTime: '8 dk',
-    image:
-      'https://images.pexels.com/photos/5212317/pexels-photo-5212317.jpeg?auto=compress&cs=tinysrgb&w=900',
+    image: '/blog_yapılacaklar.webp',
   },
   {
     title: 'Motivasyonu Yüksek Tutmanın 7 Yolu',
@@ -402,8 +391,7 @@ export const BLOG_POSTS: BlogPost[] = [
       'Uzun ve yorucu hazırlık sürecinde motivasyonunuzu nasıl koruyabilirsiniz? İşte ipuçları.\n\nKüçük hedefler belirlemek, ilerlemeyi görünür kılmak ve düzenli geri bildirim almak motivasyonu yüksek tutmanın temel adımlarıdır.',
     date: '10 Haziran 2025',
     readTime: '5 dk',
-    image:
-      'https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=900',
+    image: '/blog_motivasyon.webp',
   },
 ];
 
@@ -472,7 +460,7 @@ export const HERO_SLIDES: HeroSlide[] = [
     id: 1,
     title: "",
     subtitle: "",
-    image: "/2027_yks_2.webp",
+    image: "/hero_2027_yks_2.webp",
     buttonText: "",
     buttonLink: "",
     active: true,
@@ -482,7 +470,7 @@ export const HERO_SLIDES: HeroSlide[] = [
     id: 2,
     title: "BİREBİR EĞİTİM KOÇLUĞU",
     subtitle: "",
-    image: "/birebir_ozel_ders.webp",
+    image: "/hero_birebir_ozel_ders.webp",
     buttonText: "",
     buttonLink: "/programlar",
     active: true,
@@ -493,7 +481,7 @@ export const HERO_SLIDES: HeroSlide[] = [
     title: "DENEME SINAVLARI VE ANALİZLER",
     subtitle:
       "",
-    image: "/deneme_kulubu.webp",
+    image: "/hero_deneme_kulubu.webp",
     buttonText: "",
     buttonLink: "",
     active: true,
@@ -503,7 +491,7 @@ export const HERO_SLIDES: HeroSlide[] = [
     id: 4,
     title: "",
     subtitle: "",
-    image: "/kisiye_ozel.webp",
+    image: "/hero_kisiye_ozel.webp",
     buttonText: "",
     buttonLink: "/iletisim",
     active: true,
@@ -513,47 +501,47 @@ export const HERO_SLIDES: HeroSlide[] = [
     id: 5,
     title: "",
     subtitle: "",
-    image: "/10_ve_11_siniflar_avantaj.webp",
+    image: "/hero_10_ve_11_siniflar_avantaj.webp",
     buttonText: "",
     buttonLink: "",
     active: true,
   },
 
   {
-    id: 5,
+    id: 6,
     title: "",
     subtitle: "",
-    image: "/11_ve_12_siniflar_icin.webp",
+    image: "/hero_11_ve_12_siniflar_icin.webp",
     buttonText: "",
     buttonLink: "",
     active: true,
   },
 
   {
-    id: 5,
+    id: 7,
     title: "",
     subtitle: "",
-    image: "/2027_yks.webp",
+    image: "/hero_2027_yks.webp",
     buttonText: "",
     buttonLink: "",
     active: true,
   },
 
   {
-    id: 5,
+    id: 8,
     title: "",
     subtitle: "",
-    image: "/hosgeldiniz.webp",
+    image: "/hero_hosgeldiniz.webp",
     buttonText: "",
     buttonLink: "",
     active: true,
   },
 
   {
-    id: 5,
+    id: 9,
     title: "",
     subtitle: "",
-    image: "/kutuphane.webp",
+    image: "/hero_kutuphane.webp",
     buttonText: "",
     buttonLink: "",
     active: true,

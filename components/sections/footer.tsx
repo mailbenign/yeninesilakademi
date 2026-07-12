@@ -15,7 +15,7 @@ export function Footer() {
           {/* Brand */}
           <div className="lg:col-span-4">
             <Image
-              src="/yeninesilakademi_logo.webp"
+              src="/logo_yeninesilakademi.webp"
               alt="Yeni Nesil Akademi"
               width={180}
               height={70}

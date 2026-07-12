@@ -22,7 +22,7 @@ export function Coaching() {
             <Reveal delay={0.2} className="mt-8 relative">
               <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl shadow-navy-700/20">
                 <Image
-                  src="https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=900"
+                  src="/koçluk_hedef.webp"
                   alt="Akademik koçluk"
                   fill
                   loading="lazy"
