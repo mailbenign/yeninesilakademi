@@ -1,11 +1,10 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { ArrowRight, Sparkles, GraduationCap, CheckCircle2, Star } from 'lucide-react';
 import { HERO_SLIDES, ANNOUNCEMENT } from '@/lib/data';
 import Image from "next/image";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export function Hero() {
   const [imgIndex, setImgIndex] = useState(0);
@@ -56,15 +55,10 @@ export function Hero() {
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-8 items-center">
           {/* Left content */}
           <div className="lg:col-span-7 text-center lg:text-left">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-2 rounded-full glass px-4 py-2 text-sm font-medium text-navy-700 dark:text-white mb-6"
-            >
+            <div className="inline-flex items-center gap-2 rounded-full glass px-4 py-2 text-sm font-medium text-navy-700 dark:text-white mb-6">
               <Sparkles className="h-4 w-4 text-gold-400" />
               <span>İzmit&apos;in yeni nesil lise ve üniversite hazırlık akademisi</span>
-            </motion.div>
+            </div>
 
             <motion.h1
               initial={{ opacity: 0, y: 24 }}
@@ -119,12 +113,7 @@ export function Hero() {
             </motion.div>
 
             {/* Duyuru */}
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.35 }}
-              className="mt-8 flex justify-center lg:justify-start"
-            >
+            <div className="mt-8 flex justify-center lg:justify-start">
               <motion.div
                 animate={{ y: [0, -8, 0] }}
                 transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
@@ -150,7 +139,7 @@ export function Hero() {
                   </div>
                 </div>
               </motion.div>
-            </motion.div>
+            </div>
           </div>
 
           {/* Right visual: rotating images */}
@@ -170,30 +159,29 @@ export function Hero() {
                 aria-label="Önceki Resim"
                 className="absolute left-0 top-0 z-20 h-full w-1/2 bg-transparent"
               />
-              <AnimatePresence mode="wait">
-                <motion.div
+              <button
+                onClick={nextImage}
+                aria-label="Sonraki Resim"
+                className="absolute right-0 top-0 z-20 h-full w-1/2 bg-transparent"
+              />
+              <motion.div
                 key={imgIndex}
-                initial={{ opacity: 0, scale: 1.04 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.97 }}
-                transition={{ duration: 0.7 }}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.4 }}
                 className="absolute inset-0"
               >
-              <button
-                  onClick={nextImage}
-                  aria-label="Sonraki Resim"
-                  className="absolute right-0 top-0 z-20 h-full w-1/2 bg-transparent"
-              />
                 <Image
                   src={HERO_SLIDES[imgIndex].image}
                   alt="Yeni Nesil Akademi"
                   fill
                   priority={imgIndex === 0}
-                  sizes="(max-width:768px) 100vw, 40vw"
+                  loading={imgIndex === 0 ? undefined : "lazy"}
+                  sizes="(max-width:768px) 90vw, 35vw"
                   className="object-cover object-top"
                 />
               </motion.div>
-              </AnimatePresence>
+              
               <div className="absolute inset-0 bg-gradient-to-t from-navy-900/50 via-transparent to-transparent" />
 
               {/* Slide indicator dots */}
@@ -214,12 +202,7 @@ export function Hero() {
         </div>
 
         {/* Stats — label-only, no numbers */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.5 }}
-          className="mt-16 lg:mt-24 grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6"
-        >
+        <div className="mt-16 lg:mt-24 grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
           {statLabels.map((stat) => (
             <div
               key={stat.label}
@@ -234,7 +217,7 @@ export function Hero() {
               <p className="text-sm font-semibold text-navy-700 dark:text-white leading-snug">{stat.label}</p>
             </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );
